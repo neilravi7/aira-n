@@ -3,9 +3,11 @@ import { Routes, Route, Navigate  } from 'react-router-dom';
 import './App.css';
 
 import Layout from './component/Layout/Layout';
-import Home from './pages/Home';
-import CarListing from './pages/CarListing';
-import PageNotFound from './pages/PageNotFound';
+import Home from './pages/Home/Home';
+import CarListing from './pages/CarListing/CarListing';
+import CarDetails from './pages/CarDetails/CarDetails';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
+
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
         <Route path="/home" element={<Home />} exact />
         <Route path="/" element={<Navigate to="/home"/> } />
         <Route path="/cars" element={<CarListing />} exact />
+        
+        <Route path="/car/details/:carId" element={<CarDetails/>}>
+
+        </Route>
         {/* <Route path="/about" element={<About />} />*/}
         <Route path="*" element={<PageNotFound />} /> 
       </Routes>

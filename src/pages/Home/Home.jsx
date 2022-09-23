@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "reactstrap";
 // import {Card, CardTitle, CardText, Button} from "reactstrap";
-import Helmet from "../component/Helmet/Helmet";
+import Helmet from "../../component/Helmet/Helmet";
 import { FaRoute, FaRegHandshake } from 'react-icons/fa';
 import {IoCarOutline} from 'react-icons/io5';
 
@@ -25,7 +25,7 @@ const Home = () => {
                             <Row className="d-flex mb-4">
                                 <Col md="4" className="d-flex align-self-stretch">
                                     <div className="services w-100 text-center text-primary ">
-                                        <div className="icon d-flex align-items-center justify-content-center"><span><h1><FaRoute/></h1></span></div>
+                                        <div className="icon d-flex align-items-center justify-content-center"><span><h1> <FaRoute/> </h1></span></div>
                                         <div className="text w-100">
                                             <h5 className="heading mb-2">Choose Your Pickup Location</h5>
                                         </div>
