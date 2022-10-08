@@ -69,7 +69,7 @@ const CarDetails = (props) => {
             <Helmet title="Detail" />
             <Container>
                 <Row className="align-content-center">
-                    <Col md="7">
+                    <Col md="10 m-auto">
                         <Row>
                             <div className="col-md d-flex align-self-stretch">
                                 <figure className="mt-3 sticky">
@@ -160,13 +160,13 @@ const CarDetails = (props) => {
                             <CarDetailPane description={carDetail.descriptions} features={carDetail.features}></CarDetailPane>
                         </Row>
                     </Col>
-                    <Col md="5">
-                        <div className="position-sticky sticky">
-                            <div className="p-4 mb-3 bg-light text-white rounded">
+                    {/* <Col md="5">
+                        <div className="position-sticky sticky mt-3">
+                            <div className="p-4 bg-light text-white rounded">
                                 <BookingForm/>
                             </div>
                         </div>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </div>

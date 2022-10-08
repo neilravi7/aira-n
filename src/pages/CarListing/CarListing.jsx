@@ -11,7 +11,7 @@ const CarListing = () => {
 
     // fetch car listing data
     const fetchCarListingData = () => {
-        fetch('https://perfect-car.herokuapp.com/vehicle/list/', requestOptions)
+        fetch('http://perfect-car.herokuapp.com/vehicle/list/', requestOptions)
             .then(response => response.json())
             .then(data => setCarListingData(data))
             .catch(error => console.log(error));

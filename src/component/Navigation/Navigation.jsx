@@ -1,5 +1,8 @@
 import React from 'react';
-// import {Container} from 'reactstrap';
+import LoginForm from '../UI/Forms/LoginForm';
+import RegisterForm from '../UI/Forms/RegisterFrom';
+import {IoCarSportOutline} from 'react-icons/io5';
+
 import {
     Collapse,
     Navbar,
@@ -8,12 +11,8 @@ import {
     Nav,
     NavItem,
     NavLink,
-    // UncontrolledDropdown,
-    // DropdownToggle,
-    // DropdownMenu,
-    // DropdownItem
 } from 'reactstrap';
-
+import ModelWrapper from '../UI/Model/ModelWrapper';
 export default class Navigation extends React.Component {
     constructor(props) {
         super(props);
@@ -31,34 +30,39 @@ export default class Navigation extends React.Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <Navbar color="primary" dark expand="lg">
+                    <NavbarBrand href="/">
+                    <span><h3 className="text-white">C<IoCarSportOutline/>R</h3></span>
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="m-auto" navbar>
+                        <Nav className="ms-auto" navbar >
                             <NavItem>
                                 <NavLink href="/home">Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/cars">Our Cars</NavLink>
                             </NavItem>
-                            {/* <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Options
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown> */}
+                        </Nav>
+                        <Nav className="ms-auto" navbar>
+                            <NavItem className='me-2'>
+                                <ModelWrapper 
+                                    title="SING IN"
+                                    // cancelButtonText="Cancel"
+                                    // actionButtonText="Submit"
+                                    buttonText="Login">
+                                    <LoginForm></LoginForm>
+                                </ModelWrapper>
+                            </NavItem>
+                            <NavItem className='me-2' >
+                                <ModelWrapper 
+                                    title="SIGN UP"
+                                    // cancelButtonText="Cancel"
+                                    // actionButtonText="Submit"
+                                    buttonText="Get started">
+                                    <RegisterForm></RegisterForm>
+                                </ModelWrapper>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
