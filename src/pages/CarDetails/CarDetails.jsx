@@ -3,77 +3,43 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../component/Helmet/Helmet";
 import carImage from '../../assets/images/Hero/hero.jpg';
-
-import CarDetailPane from '../../component/UI/CarDetailPane/CarDetailPane';
+// import CarDetailPane from '../../component/UI/CarDetailPane/CarDetailPane';
+// Icons
 import { GiCarSeat, GiFuelTank, GiGearHammer, GiMountainRoad } from 'react-icons/gi';
 import { MdLuggage } from 'react-icons/md';
+
 import "../CarDetails/car-detail.css";
 import BookingForm  from "../../component/UI/Forms/BookingForm";
 
-
-const carDetail = {
-    car_name: "9 GMC Acadia",
-    transmission: "Manual",
-    luggage: 4,
-    fuel: "Petrol",
-    seats: 5,
-    milage: "12 mpl",
-    descriptions: "With a versatile interior, GMC Pro Safety Plus standard, & impressive performance packages, the 2023 Acadia 7 Seater SUV is ready for adventure",
-    vehicle_class: "economy",
-    vehicle_type: "suv_or_jeep",
-    sub_total_price: "124.18",
-    rating_count: 46,
-    star_rating: 3,
-    is_available: true,
-    manufactured_by: "GMC",
-    manufactured_year: "2019",
-    car_photo: carImage,
-    features: [
-        "All-wheel drive",
-        "Automatic Transmission",
-        "GPS navigation system",
-        "Leather interior",
-        "Cruise control",
-        "Air conditioning",
-        "Bluetooth wireless",
-        "CD Player",
-        "AUX/MP3 enabled",
-        "Tinted windows"
-    ]
-
-}
 const CarDetails = (props) => {
-    // const params = useParams();
-    // console.log(params);
-    // const [carDetail, setCarDetail] = useState([]);
-    // const requestOptions = {
-    //     method: 'GET',
-    // };
+    const params = useParams();
+    console.log(params);
+    const [carDetail, setCarDetail] = useState([]);
+    const requestOptions = {
+        method: 'GET',
+    };
 
-    // const fetchCarDetail = () => {
-    //     fetch(`https://perfect-car.herokuapp.com/vehicle/${params.carId}/detail/`, requestOptions)
-    //         .then(response => response.json())
-    //         .then(data => setCarDetail(data))
-    //         .catch(error => console.log(error))
-    //     setCarDetail({
+    const fetchCarDetail = () => {
+        fetch(`http://localhost:8000/vehicle/${params.carId}/detail/`, requestOptions)
+            .then(response => response.json())
+            .then(data => setCarDetail(data))
+            .catch(error => console.log(error))
+    };
 
-    //     });
-    // };
-
-    // useEffect(() => {
-    //     fetchCarDetail()
-    // },[]);
+    useEffect(() => {
+        fetchCarDetail()
+    },[]);
 
     return (
         <div>
             <Helmet title="Detail" />
             <Container>
                 <Row className="align-content-center">
-                    <Col md="10 m-auto">
+                    <Col md="7 m-auto">
                         <Row>
                             <div className="col-md d-flex align-self-stretch">
                                 <figure className="mt-3 sticky">
-                                    <img className="img-fluid rounded" src={carImage} alt="car cover" />
+                                    <img className="img-fluid rounded" src={carDetail.car_photo} alt="car cover" />
                                 </figure>
                             </div>
                         </Row>
@@ -156,17 +122,18 @@ const CarDetails = (props) => {
                                 </div>
                             </div>
                         </Row>
+                        {/* Lets see it latter 
                         <Row>
                             <CarDetailPane description={carDetail.descriptions} features={carDetail.features}></CarDetailPane>
-                        </Row>
+                        </Row> */}
                     </Col>
-                    {/* <Col md="5">
+                    <Col md="5">
                         <div className="position-sticky sticky mt-3">
                             <div className="p-4 bg-light text-white rounded">
                                 <BookingForm/>
                             </div>
                         </div>
-                    </Col> */}
+                    </Col>
                 </Row>
             </Container>
         </div>
@@ -174,3 +141,37 @@ const CarDetails = (props) => {
 }
 
 export default CarDetails;
+
+
+
+// const carDetail = {
+//     car_name: "9 GMC Acadia",
+//     transmission: "Manual",
+//     luggage: 4,
+//     fuel: "Petrol",
+//     seats: 5,
+//     milage: "12 mpl",
+//     descriptions: "With a versatile interior, GMC Pro Safety Plus standard, & impressive performance packages, the 2023 Acadia 7 Seater SUV is ready for adventure",
+//     vehicle_class: "economy",
+//     vehicle_type: "suv_or_jeep",
+//     sub_total_price: "124.18",
+//     rating_count: 46,
+//     star_rating: 3,
+//     is_available: true,
+//     manufactured_by: "GMC",
+//     manufactured_year: "2019",
+//     car_photo: carImage,
+//     features: [
+//         "All-wheel drive",
+//         "Automatic Transmission",
+//         "GPS navigation system",
+//         "Leather interior",
+//         "Cruise control",
+//         "Air conditioning",
+//         "Bluetooth wireless",
+//         "CD Player",
+//         "AUX/MP3 enabled",
+//         "Tinted windows"
+//     ]
+
+// }

@@ -29,7 +29,7 @@ const CarDetailPane = (props) => {
       <div className="tab-content" id="pills-tabContent">
         <div className={activeTab === "feature" ? "tab-pane fade show active" : "tab-pane fade"} id="pills-feature" role="tabpanel" aria-labelledby="pills-feature-tab">
           <div className="row bg-light rounded ">
-            <div className="col-md-3  m-3">
+            <div className="col-md-3">
               <ul className="features">
                 <li className="check"><span className="ion-ios-checkmark"></span>Airconditions</li>
                 <li className="check"><span className="ion-ios-checkmark"></span>Child Seat</li>
@@ -38,7 +38,7 @@ const CarDetailPane = (props) => {
                 <li className="check"><span className="ion-ios-checkmark"></span>Music</li>
               </ul>
             </div>
-            <div className="col-md-3 bg-light m-3 rounded">
+            <div className="col-md-3 bg-light  rounded">
               <ul className="features">
                 <li className="check"><span className="ion-ios-checkmark"></span>Seat Belt</li>
                 <li className="remove"><span className="ion-ios-close"></span>Sleeping Bed</li>
@@ -47,7 +47,7 @@ const CarDetailPane = (props) => {
                 <li className="remove"><span className="ion-ios-close"></span>Onboard computer</li>
               </ul>
             </div>
-            <div className="col-md-3 bg-light m-3 rounded">
+            <div className="col-md-3 bg-light rounded">
               <ul className="features">
                 <li className="check"><span className="ion-ios-checkmark"></span>Audio input</li>
                 <li className="check"><span className="ion-ios-checkmark"></span>Long Term Trips</li>
