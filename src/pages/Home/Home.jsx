@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "reactstrap";
-// import {Card, CardTitle, CardText, Button} from "reactstrap";
 import Helmet from "../../component/Helmet/Helmet";
 import { FaRoute, FaRegHandshake } from 'react-icons/fa';
 import {IoCarOutline} from 'react-icons/io5';
@@ -16,9 +15,8 @@ const Home = () => {
                     </div>
                 </Container>
             </header>
-            <Container >
+            <Container >                               
                 <Row className="no-gutter">
-
                     <Col md="12" className="d-flex align-items-center">
                         <div className="w-100">
                             {/* <h3 className="m-4">Better Way to Rent Your Perfect Cars</h3> */}

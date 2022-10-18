@@ -1,9 +1,8 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import { Form, Input, Label, FormGroup, Button } from "reactstrap";
-import vehicleService from "../../../services/vehicle.service";
-import { withRouter } from "../../../common/with-router";
+// import vehicleService from "../../../services/vehicle.service";
+// import { withRouter } from "../../../common/with-router";
 
 class BookingForm extends React.Component{
     constructor(props){
@@ -60,7 +59,7 @@ class BookingForm extends React.Component{
         const {originCity, pickUpLocation, startDate, startTime, endDate, endTime } = this.state   
         return (
             <div>
-                <h1 className="fs-4 card-title fw-bold mb-4 text-primary">Duration</h1>
+                {/* <h1 className="fs-4 card-title fw-bold mb-4 text-primary">Duration</h1> */}
                 <Form className="form text-dark" onSubmit={this.handleSubmit}>
                     <FormGroup floating>
                         <Input

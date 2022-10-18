@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../component/Helmet/Helmet";
-import carImage from '../../assets/images/Hero/hero.jpg';
-// import CarDetailPane from '../../component/UI/CarDetailPane/CarDetailPane';
 // Icons
 import { GiCarSeat, GiFuelTank, GiGearHammer, GiMountainRoad } from 'react-icons/gi';
 import { MdLuggage } from 'react-icons/md';
@@ -28,6 +26,7 @@ const CarDetails = (props) => {
 
     useEffect(() => {
         fetchCarDetail()
+        console.log('i fire once');
     },[]);
 
     return (
@@ -39,7 +38,7 @@ const CarDetails = (props) => {
                         <Row>
                             <div className="col-md d-flex align-self-stretch">
                                 <figure className="mt-3 sticky">
-                                    <img className="img-fluid rounded" src={carDetail.car_photo} alt="car cover" />
+                                    <img className="img-fluid rounded" src={carDetail.car_white_image} alt="car cover" />
                                 </figure>
                             </div>
                         </Row>
@@ -72,7 +71,7 @@ const CarDetails = (props) => {
                             <div className="col-md d-flex align-self-stretch">
                                 <div className="d-flex mb-3">
                                     <div className="d-flex align-items-center justify-content-center m-2">
-                                        <h3><span className="text-info"><GiGearHammer /></span></h3>
+                                        <h3><span className="text-info"> <GiGearHammer /> </span></h3>
                                     </div>
                                     <div className="d-flex mt-2">
                                         <li className="list-inline-item">
@@ -116,7 +115,7 @@ const CarDetails = (props) => {
                                     <div className="d-flex mt-2">
                                         <li className="list-inline-item">
                                             <span className="text-dark "><strong>Fuel</strong></span>
-                                            <h6 className="text-primary">{carDetail.fuel}</h6>
+                                            <h6 className="text-primary">{carDetail.fuel_type}</h6>
                                         </li>
                                     </div>
                                 </div>

@@ -1,6 +1,4 @@
 import React from 'react';
-import LoginForm from '../UI/Forms/LoginForm';
-import RegisterForm from '../UI/Forms/RegisterFrom';
 import {IoCarSportOutline} from 'react-icons/io5';
 
 import {
@@ -12,7 +10,6 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
-import ModelWrapper from '../UI/Model/ModelWrapper';
 export default class Navigation extends React.Component {
     constructor(props) {
         super(props);
@@ -29,44 +26,32 @@ export default class Navigation extends React.Component {
     }
     render() {
         return (
-            <div>
-                <Navbar color="primary" dark expand="lg">
+            <>
+                <Navbar dark expand="lg">
                     <NavbarBrand href="/">
-                    <span><h3 className="text-white">C<IoCarSportOutline/>R</h3></span>
+                        <span><h3 className="text-primary">RENT<IoCarSportOutline/>GO</h3></span>
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ms-auto" navbar >
+                        {/* <Nav className="ms-auto" navbar >
                             <NavItem>
-                                <NavLink href="/home">Home</NavLink>
+                                <NavLink outline className="btn btn-primary" href="/home">Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/cars">Our Cars</NavLink>
                             </NavItem>
-                        </Nav>
+                        </Nav> */}
                         <Nav className="ms-auto" navbar>
                             <NavItem className='me-2'>
-                                <ModelWrapper 
-                                    title="SING IN"
-                                    // cancelButtonText="Cancel"
-                                    // actionButtonText="Submit"
-                                    buttonText="Login">
-                                    <LoginForm></LoginForm>
-                                </ModelWrapper>
+                                <NavLink className="btn btn-primary" href="/auth/login"> Sign-In </NavLink>
                             </NavItem>
                             <NavItem className='me-2' >
-                                <ModelWrapper 
-                                    title="SIGN UP"
-                                    // cancelButtonText="Cancel"
-                                    // actionButtonText="Submit"
-                                    buttonText="Get started">
-                                    <RegisterForm></RegisterForm>
-                                </ModelWrapper>
+                                <NavLink className="btn btn-primary" href="/auth/register"> Get Started </NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
-            </div>
+            </>
         );
     }
 }

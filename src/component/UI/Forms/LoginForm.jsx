@@ -57,7 +57,7 @@ class LoginForm extends React.Component {
         const {username, password, remember} = this.state
         return (
             <div>
-            {/* <h1 className="fs-4 card-title fw-bold mb-4"><Badge color="info">Login</Badge></h1> */}
+            <h1 className="fs-4 card-title fw-bold mb-4">Login</h1>
                 <Form className="form" onSubmit={this.handleLogin}>
                     <FormGroup floating>
                         <Input

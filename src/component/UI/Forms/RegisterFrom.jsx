@@ -45,7 +45,8 @@ class RegisterForm extends React.Component {
     render() {
         const { email, userName, password, password2 } = this.state;
         return (
-            <div>
+            <React.Fragment>
+            <h1 className="fs-4 card-title fw-bold mb-4">Get Started</h1>
                 <Form className="form" onSubmit={this.handleRegister} >
                     <FormGroup floating>
                         <Input
@@ -114,7 +115,7 @@ class RegisterForm extends React.Component {
                         Register
                     </Button>
                 </Form>
-            </div>
+            </React.Fragment>
         );
     }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import {IoCarSportOutline} from 'react-icons/io5';
+import { Outlet } from "react-router-dom";
 
 const AuthLayout = ({children}) => {
     return(
@@ -14,11 +15,11 @@ const AuthLayout = ({children}) => {
                         </div>
                         <div className="card shadow-lg">
                             <div className="card-body p-5">
-                                {children}
+                                <Outlet/>
                             </div>
                             <div className="card-footer py-3 border-0">
                                 <div className="text-center">
-                                    Don't have an account? <a href="register.html" className="text-dark">Create One</a>
+                                    Don't have an account? <a href="/auth/register" className="text-dark">Create One</a>
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 // NOTICE
 // Modal is brought in with it's own trigger, so import the component where you want the trigger to be.
+// Uses
+{/*  <ModelWrapper  title="SIGN UP" cancelButtonText="Cancel" actionButtonText="Submit" buttonText="Get started">
+ <RegisterForm></RegisterForm> Component will be passed here
+</ModelWrapper>*/}
 
 const ModelWrapper = (props) => {
     const {
@@ -38,11 +42,13 @@ const ModelWrapper = (props) => {
                     <div className="card-body p-5">
                         {children}
                     </div>
-                    {/* <div className="card-footer py-3 border-0">
-              <div className="text-center">
-                Don't have an account? <a href="register.html" className="text-dark">Create One</a>
-              </div>
-            </div> */}
+                    {/* 
+                        <div className="card-footer py-3 border-0">
+                        <div className="text-center">
+                            Don't have an account? <a href="register.html" className="text-dark">Create One</a>
+                        </div>
+                    </div> */}
+
                 </div>
             </Modal>
         </div>
@@ -50,3 +56,4 @@ const ModelWrapper = (props) => {
 };
 
 export default ModelWrapper;
+

@@ -25,7 +25,7 @@ export default class PasswordResetFrom extends React.Component{
         const {password, password2 } = this.state;
         return(
             <div>
-            <h1 className="fs-4 card-title fw-bold mb-4"><Badge color="info">Reset Password</Badge></h1>
+            <h1 className="fs-4 card-title fw-bold mb-4">Reset Password</h1>
                 <Form className="form" >
                 <FormGroup floating>
                         <Input

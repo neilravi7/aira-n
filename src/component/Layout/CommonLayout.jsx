@@ -1,17 +1,19 @@
 import Navigation from "../Navigation/Navigation";
 // import { Container } from "reactstrap";
-import { Fragment } from "react";
 import Footer from "../Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 
-const Layout = ({children}) => {
+const CommonLayout = (props) => {
     return(
-        <Fragment>
+        <>
           <Navigation/>
-            {children}
+          <main>
+          <Outlet></Outlet>
+          </main>
           <Footer/>  
-        </Fragment>
+        </>
     )
 }
 
-export default Layout;
+export default CommonLayout;
